@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dailyFragment">
+
+    <fragment
+        android:id="@+id/dailyFragment"
+        android:name="ru.kheynov.crosswordle.featureDaily.presentation.DailyFragment"
+        android:label="Daily" />
+
+    <fragment
+        android:id="@+id/practiceFragment"
+        android:name="ru.kheynov.crosswordle.featurePractice.presentation.PracticeFragment"
+        android:label="Practice" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.kheynov.crosswordle.featureProfile.presentation.ProfileFragment"
+        android:label="Profile" />
+</navigation>

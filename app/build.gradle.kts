@@ -1,11 +1,9 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.ksp)
     kotlin("kapt")
     id("kotlinx-serialization")
-    id("com.google.dagger.hilt.android")
     alias(libs.plugins.navigationSafeArgs)
     alias(libs.plugins.detekt)
     alias(libs.plugins.firebaseCrashlytics)
@@ -41,15 +39,19 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
+        viewBinding = true
         compose = true
     }
+
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
@@ -59,6 +61,7 @@ android {
 }
 
 dependencies {
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
@@ -75,11 +78,8 @@ dependencies {
     implementation(libs.lifecycle.extensions)
     implementation(libs.fragment.ktx)
 
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
-    implementation(libs.hilt.android.compiler)
-    implementation(libs.hilt.navigation.compose)
-    implementation(libs.hilt.navigation.fragment)
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 
     implementation(libs.serialization.core)
     implementation(libs.serialization.json)
@@ -89,7 +89,7 @@ dependencies {
     implementation(libs.okhttp)
 
     implementation(libs.room)
-    implementation(libs.room.compiler)
+    ksp(libs.room.compiler)
     implementation(libs.room.ktx)
 
     implementation(libs.coroutines.android)
@@ -100,6 +100,8 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.messaging.ktx)
+    implementation(libs.legacy.support.v4)
+    implementation(libs.lifecycle.livedata.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

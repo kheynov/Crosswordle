@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="close">Закрыть</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">ОК</string>
+    <string name="connection_error">Ошибка при подключении к интернету</string>
+    <string name="server_error">Ошибка на сервере, попробуйте позже</string>
+    <string name="retry">Повторить</string>
+    <string name="app_theme">Тема приложения</string>
+    <string name="back_button">Назад</string>
+    <string name="settings_button">Настройки</string>
+    <string name="dark_theme_name">Тёмная</string>
+    <string name="light_theme_name">Светлая</string>
+    <string name="system_theme_name">Как в системе</string>
+</resources>
