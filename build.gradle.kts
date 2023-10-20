@@ -31,6 +31,7 @@ buildscript {
         classpath(libs.r8)
         classpath(libs.gradle)
         classpath(libs.kotlin.serialization)
+        classpath(libs.navigation.safe.args)
     }
 }
 

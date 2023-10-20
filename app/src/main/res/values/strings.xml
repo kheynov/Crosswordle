@@ -14,4 +14,7 @@
     <string name="dark_theme_name">Dark</string>
     <string name="light_theme_name">Light</string>
     <string name="system_theme_name">System</string>
+    <string name="daily_nav_label">Daily</string>
+    <string name="practice_nav_label">Practice</string>
+    <string name="profile_nav_label">Profile</string>
 </resources>

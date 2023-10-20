@@ -16,6 +16,8 @@ annotation class AppScope
 
 @Component(
     modules = [
+        NetworkModule::class,
+        AppModule::class,
     ]
 )
 @AppScope
